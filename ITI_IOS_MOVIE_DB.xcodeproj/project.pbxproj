@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		9188512A241BF6B700655302 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 91885129241BF6B700655302 /* SystemConfiguration.framework */; };
+		9188512C241BF70500655302 /* Reachability.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188512B241BF70500655302 /* Reachability.swift */; };
 		BC40D7210746C993357D9D51 /* Pods_ITI_IOS_MOVIE_DB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4516EE8088730B6C69381050 /* Pods_ITI_IOS_MOVIE_DB.framework */; };
 		DD6C2088241B1CFC00F399C4 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C2087241B1CFC00F399C4 /* HomeCollectionViewController.swift */; };
 		DD87858D241AE184003622A1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87858C241AE184003622A1 /* Movie.swift */; };
@@ -20,6 +22,8 @@
 /* Begin PBXFileReference section */
 		4516EE8088730B6C69381050 /* Pods_ITI_IOS_MOVIE_DB.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ITI_IOS_MOVIE_DB.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		7A09319FAF167F3558868DD3 /* Pods-ITI_IOS_MOVIE_DB.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITI_IOS_MOVIE_DB.debug.xcconfig"; path = "Target Support Files/Pods-ITI_IOS_MOVIE_DB/Pods-ITI_IOS_MOVIE_DB.debug.xcconfig"; sourceTree = "<group>"; };
+		91885129241BF6B700655302 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		9188512B241BF70500655302 /* Reachability.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Reachability.swift; sourceTree = "<group>"; };
 		969D96F5600D752E60F69BCA /* Pods-ITI_IOS_MOVIE_DB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITI_IOS_MOVIE_DB.release.xcconfig"; path = "Target Support Files/Pods-ITI_IOS_MOVIE_DB/Pods-ITI_IOS_MOVIE_DB.release.xcconfig"; sourceTree = "<group>"; };
 		DD6C2087241B1CFC00F399C4 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		DD87858C241AE184003622A1 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
@@ -37,6 +41,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				9188512A241BF6B700655302 /* SystemConfiguration.framework in Frameworks */,
 				BC40D7210746C993357D9D51 /* Pods_ITI_IOS_MOVIE_DB.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -47,6 +52,7 @@
 		8202B8FDF3D9F1BAE2BB1CAF /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				91885129241BF6B700655302 /* SystemConfiguration.framework */,
 				4516EE8088730B6C69381050 /* Pods_ITI_IOS_MOVIE_DB.framework */,
 			);
 			name = Frameworks;
@@ -73,6 +79,7 @@
 		DDBB6631241ADFDE00A5802E /* ITI_IOS_MOVIE_DB */ = {
 			isa = PBXGroup;
 			children = (
+				9188512B241BF70500655302 /* Reachability.swift */,
 				DDBB6632241ADFDE00A5802E /* AppDelegate.swift */,
 				DDBB6636241ADFDE00A5802E /* Main.storyboard */,
 				DDBB663C241ADFDF00A5802E /* Assets.xcassets */,
@@ -212,6 +219,7 @@
 				DDBB663B241ADFDE00A5802E /* ITI_IOS_MOVIE_DB.xcdatamodeld in Sources */,
 				DD87858D241AE184003622A1 /* Movie.swift in Sources */,
 				DD6C2088241B1CFC00F399C4 /* HomeCollectionViewController.swift in Sources */,
+				9188512C241BF70500655302 /* Reachability.swift in Sources */,
 				DDBB6633241ADFDE00A5802E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
