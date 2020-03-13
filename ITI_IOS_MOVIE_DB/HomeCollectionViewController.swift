@@ -10,6 +10,7 @@ import UIKit
 import Alamofire
 import SwiftyJSON
 import SDWebImage
+import CoreData
 
 private let reuseIdentifier = "aCell"
 
@@ -21,6 +22,8 @@ class HomeCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        
         if reachability.isConnectedToNetwork() == true {
                     getMovies()
         } else {
@@ -132,6 +135,70 @@ class HomeCollectionViewController: UICollectionViewController {
             case .failure(let error):
                 print(error)
             }
+        }
+        
+    }
+    
+    func saveMoviesToDB(){
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let manageContext  = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "SavedMovie", in: manageContext)
+        
+        let movie = NSManagedObject(entity: entity!, insertInto: manageContext)
+        
+        for m in mainMoviesArr {
+            movie.setValue(m.id, forKey: "mID")
+            movie.setValue(m.overView, forKey: "mOverView")
+            movie.setValue(m.vote_average, forKey: "mRating")
+            movie.setValue(m.release_date, forKey: "mReleaseYear")
+            movie.setValue(m.title, forKey: "mTitle")
+            
+            
+            do {
+                try manageContext.save()
+
+                DispatchQueue.main.async {
+                }
+            }catch let error{
+                
+                print(error)
+            }
+        }
+    }
+    func getMoviesFromDB(){
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let manageContext  = appDelegate.persistentContainer.viewContext
+        
+        let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "SavedMovie")
+        
+        //        let predicate = NSPredicate (format: "title == %@", "movie 1")
+        //        fetchReq.predicate = predicate
+        
+        do {
+           var moviesArray = [NSManagedObject]()
+
+            moviesArray = try manageContext.fetch(fetchReq)
+            
+            for obj in moviesArray {
+                
+                var movie : Movie = Movie()
+                
+                movie.id = obj.value(forKey: "mID") as! Int
+                movie.overView = obj.value(forKey: "mOverView") as! String
+                movie.vote_average = obj.value(forKey: "mRating") as! Double
+                movie.release_date = obj.value(forKey: "mReleaseYear") as! String
+                movie.title = obj.value(forKey: "mTitle") as! String
+                mainMoviesArr.append(movie)
+                
+            }
+        }catch let error{
+            
+            print (error)
+            
         }
         
     }

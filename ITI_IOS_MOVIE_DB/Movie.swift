@@ -34,6 +34,14 @@ class Movie : JSONable  {
         overView = parameter["overview"].stringValue
         release_date = parameter["release_date"].stringValue
     }
+    init() {
+        id = 0
+        title = ""
+        image = ""
+        vote_average = 0.0
+        release_date = ""
+        overView = ""
+    }
     
     
 }
