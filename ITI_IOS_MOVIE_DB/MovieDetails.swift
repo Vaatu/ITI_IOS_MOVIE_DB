@@ -28,7 +28,7 @@ class MovieDetails: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .dark
+//            overrideUserInterfaceStyle = .dark
         } else {
             // Fallback on earlier versions
         }
