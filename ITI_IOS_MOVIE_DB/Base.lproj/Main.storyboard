@@ -24,7 +24,7 @@
                             <inset key="sectionInset" minX="0.0" minY="0.0" maxX="0.0" maxY="0.0"/>
                         </collectionViewFlowLayout>
                         <cells>
-                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="spatial" reuseIdentifier="aCell" id="zrw-n9-uew">
+                            <collectionViewCell opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" semanticContentAttribute="spatial" insetsLayoutMarginsFromSafeArea="NO" reuseIdentifier="aCell" id="zrw-n9-uew">
                                 <rect key="frame" x="0.0" y="0.0" width="201" height="334"/>
                                 <autoresizingMask key="autoresizingMask"/>
                                 <view key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO">
@@ -47,6 +47,7 @@
                                     <constraint firstItem="aTd-70-CVX" firstAttribute="leading" secondItem="zrw-n9-uew" secondAttribute="leading" id="iqR-uY-3XN"/>
                                     <constraint firstItem="aTd-70-CVX" firstAttribute="top" secondItem="zrw-n9-uew" secondAttribute="top" id="l3o-PG-Npm"/>
                                 </constraints>
+                                <size key="customSize" width="201" height="334"/>
                             </collectionViewCell>
                         </cells>
                         <connections>
