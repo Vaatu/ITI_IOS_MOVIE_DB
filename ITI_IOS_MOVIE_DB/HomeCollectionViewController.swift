@@ -27,7 +27,7 @@ class HomeCollectionViewController: UICollectionViewController {
         if reachability.isConnectedToNetwork() == true {
                     getMovies()
         } else {
-//            getMoviesCoreData()
+            getMoviesFromDB()
         }
         
         // Uncomment the following line to preserve selection between presentations
@@ -129,9 +129,10 @@ class HomeCollectionViewController: UICollectionViewController {
                 if let moviesArr = json["results"].toArrOf(type:Movie.self){
                     movies = moviesArr as! [Movie]
                     self.mainMoviesArr = movies
+                    self.saveMoviesToDB()
                     self.collectionView.reloadData()
                 }
-            //                print("Movies : \(movies[0].title)")
+                print("Loaded Online")
             case .failure(let error):
                 print(error)
             }
@@ -154,8 +155,8 @@ class HomeCollectionViewController: UICollectionViewController {
             movie.setValue(m.vote_average, forKey: "mRating")
             movie.setValue(m.release_date, forKey: "mReleaseYear")
             movie.setValue(m.title, forKey: "mTitle")
-            
-            
+            movie.setValue(m.image, forKey: "mImage")
+
             do {
                 try manageContext.save()
 
@@ -192,8 +193,9 @@ class HomeCollectionViewController: UICollectionViewController {
                 movie.vote_average = obj.value(forKey: "mRating") as! Double
                 movie.release_date = obj.value(forKey: "mReleaseYear") as! String
                 movie.title = obj.value(forKey: "mTitle") as! String
+                movie.image = obj.value(forKey: "mImage") as! String
                 mainMoviesArr.append(movie)
-                
+                print("Loaded from CoreData")
             }
         }catch let error{
             
