@@ -8,6 +8,7 @@
 
 import UIKit
 
+
 class MovieDetails: UIViewController {
 
 
@@ -36,6 +37,8 @@ class MovieDetails: UIViewController {
         movieTitle.text = movie.title
         year.text = movie.release_date
         overview.text = movie.overView
+        
+        imageView.sd_setImage(with: URL(string: "\("https://image.tmdb.org/t/p/w185")\(movie.image)" ), completed: nil)
 
         // Do any additional setup after loading the view.
     }
