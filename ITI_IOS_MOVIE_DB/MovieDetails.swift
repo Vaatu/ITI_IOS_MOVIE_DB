@@ -19,12 +19,14 @@ class MovieDetails: UIViewController {
     @IBAction func btnReviews(_ sender: UIButton) {
     }
     
+    var movie = Movie()
+
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
 
-//        var movie = Movie(parameter: <#JSON#>)
         // Do any additional setup after loading the view.
     }
     
