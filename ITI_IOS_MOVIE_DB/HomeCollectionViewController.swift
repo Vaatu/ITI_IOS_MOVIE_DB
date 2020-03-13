@@ -101,6 +101,14 @@ class HomeCollectionViewController: UICollectionViewController {
      
      }
      */
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
+    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
+        return 0
+    }
+    
     func getMovies(){
         var movies : [Movie] = []
         AF.request("https://api.themoviedb.org/3/discover/movie?api_key=c8b0eb2f599e052e6d93b9ebacaa0b61&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1").responseJSON {
