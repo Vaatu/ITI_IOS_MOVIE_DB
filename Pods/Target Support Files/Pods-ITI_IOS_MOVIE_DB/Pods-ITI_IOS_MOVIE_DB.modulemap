@@ -1,0 +1,6 @@
+framework module Pods_ITI_IOS_MOVIE_DB {
+  umbrella header "Pods-ITI_IOS_MOVIE_DB-umbrella.h"
+
+  export *
+  module * { export * }
+}
