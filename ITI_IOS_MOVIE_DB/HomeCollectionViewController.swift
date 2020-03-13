@@ -20,6 +20,8 @@ class HomeCollectionViewController: UICollectionViewController {
     
     var mainMoviesArr : [Movie] = []
     
+    var segueIndex : (Int)
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -105,11 +107,22 @@ class HomeCollectionViewController: UICollectionViewController {
      override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
      return false
      }
-     
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-     
-     }
      */
+     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+        
+        segueIndex = indexPath.row
+
+        performSegue(withIdentifier: "showMovieDetails", sender: self)
+        
+     }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showMovieDetails" {
+            let MovieDetails = segue.destination as! MovieDetails
+            MovieDetails.movie = mainMoviesArr[segueIndex]
+        }
+    }
+     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
