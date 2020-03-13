@@ -9,4 +9,5 @@ target 'ITI_IOS_MOVIE_DB' do
 	 pod 'SDWebImage'
   pod 'Alamofire'
   pod 'SwiftyJSON'
+  pod 'Cosmos', '~> 21.0'
 end

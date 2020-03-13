@@ -31,7 +31,7 @@ class HomeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 13.0, *) {
-            overrideUserInterfaceStyle = .dark
+//            preferredUserInterfaceStyle = .dark
         } else {
             // Fallback on earlier versions
         }
@@ -179,15 +179,18 @@ class HomeCollectionViewController: UICollectionViewController {
 
     }
     func saveMoviesToDB(){
+        
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
         let manageContext  = appDelegate.persistentContainer.viewContext
         
         let entity = NSEntityDescription.entity(forEntityName: "SavedMovie", in: manageContext)
         
-        let movie = NSManagedObject(entity: entity!, insertInto: manageContext)
         var count = 0
+
         for m in mainMoviesArr {
+        let movie = NSManagedObject(entity: entity!, insertInto: manageContext)
+        
             print(m.title)
             movie.setValue(m.id, forKey: "mID")
             movie.setValue(m.overView, forKey: "mOverView")
@@ -221,8 +224,6 @@ class HomeCollectionViewController: UICollectionViewController {
             print("\("COREDATA GET")\(moviesArray.count)")
             
             for obj in moviesArray {
-                print(obj.value(forKey: "mTitle")!)
-                
                 let movie : Movie = Movie()
                 
                 movie.id = obj.value(forKey: "mID") as! Int

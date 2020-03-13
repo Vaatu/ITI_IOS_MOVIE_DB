@@ -35,6 +35,7 @@ class MovieDetails: UIViewController {
 //        } else {
 //            // Fallback on earlier versions
 //        }
+
         
         movieTitle.text = movie.title
         year.text = movie.release_date
