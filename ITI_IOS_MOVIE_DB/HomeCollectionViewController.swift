@@ -20,7 +20,7 @@ class HomeCollectionViewController: UICollectionViewController {
     
     var mainMoviesArr : [Movie] = []
     
-    var segueIndex : (Int)
+    var segueIndex = -1
     
     override func viewDidLoad() {
         super.viewDidLoad()
