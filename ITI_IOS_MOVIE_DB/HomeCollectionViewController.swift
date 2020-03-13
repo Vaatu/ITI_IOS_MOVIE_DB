@@ -32,7 +32,7 @@ class HomeCollectionViewController: UICollectionViewController {
         
         
         if reachability.isConnectedToNetwork() == true {
-                    getMovies()
+            getMovies()
         } else {
             getMoviesFromDB()
         }
@@ -112,12 +112,15 @@ class HomeCollectionViewController: UICollectionViewController {
      override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
      return false
      }
-     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+     */
+    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
         
+        segueIndex = indexPath.row
+        
+        performSegue(withIdentifier: "showMovieDetails", sender: self)
+        
+    }
 
-        
-     }
-    */
     
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath){
@@ -133,7 +136,7 @@ class HomeCollectionViewController: UICollectionViewController {
             MovieDetails.movie = mainMoviesArr[segueIndex]
         }
     }
-     
+    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0
     }
@@ -153,7 +156,6 @@ class HomeCollectionViewController: UICollectionViewController {
                 if let moviesArr = json["results"].toArrOf(type:Movie.self){
                     movies = moviesArr as! [Movie]
                     self.mainMoviesArr = movies
-                    self.saveMoviesToDB()
                     self.collectionView.reloadData()
                 }
                 print("Loaded Online")
@@ -164,6 +166,11 @@ class HomeCollectionViewController: UICollectionViewController {
         
     }
     
+    override func viewWillDisappear(_ animated: Bool) {
+        if reachability.isConnectedToNetwork() == true {
+            saveMoviesToDB()
+        }
+    }
     func saveMoviesToDB(){
         let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
@@ -172,25 +179,26 @@ class HomeCollectionViewController: UICollectionViewController {
         let entity = NSEntityDescription.entity(forEntityName: "SavedMovie", in: manageContext)
         
         let movie = NSManagedObject(entity: entity!, insertInto: manageContext)
-        
+        var count = 0
         for m in mainMoviesArr {
+            print(m.title)
             movie.setValue(m.id, forKey: "mID")
             movie.setValue(m.overView, forKey: "mOverView")
             movie.setValue(m.vote_average, forKey: "mRating")
             movie.setValue(m.release_date, forKey: "mReleaseYear")
             movie.setValue(m.title, forKey: "mTitle")
             movie.setValue(m.image, forKey: "mImage")
-
+            count += 1
             do {
                 try manageContext.save()
+                print("\("COREDATA SAVED")\(count)")
 
-                DispatchQueue.main.async {
-                }
             }catch let error{
                 
                 print(error)
             }
         }
+        
     }
     func getMoviesFromDB(){
         
@@ -200,17 +208,16 @@ class HomeCollectionViewController: UICollectionViewController {
         
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "SavedMovie")
         
-        //        let predicate = NSPredicate (format: "title == %@", "movie 1")
-        //        fetchReq.predicate = predicate
-        
-        do {
-           var moviesArray = [NSManagedObject]()
-
-            moviesArray = try manageContext.fetch(fetchReq)
+            do {
+            var moviesArray = [NSManagedObject]()
             
+            moviesArray = try manageContext.fetch(fetchReq)
+            print("\("COREDATA GET")\(moviesArray.count)")
+
             for obj in moviesArray {
-                
-                var movie : Movie = Movie()
+                print(obj.value(forKey: "mTitle")!)
+
+                let movie : Movie = Movie()
                 
                 movie.id = obj.value(forKey: "mID") as! Int
                 movie.overView = obj.value(forKey: "mOverView") as! String
@@ -221,6 +228,7 @@ class HomeCollectionViewController: UICollectionViewController {
                 mainMoviesArr.append(movie)
                 print("Loaded from CoreData")
             }
+            self.collectionView.reloadData()
         }catch let error{
             
             print (error)
