@@ -1,8 +1,8 @@
 //
 //  HomeCollectionViewController.swift
-//  ITI_IOS_Movies_App
+//  ITI_IOS_MOVIE_DB
 //
-//  Created by Muhammad El-Arabi on 3/12/20.
+//  Created by Muhammad El-Arabi on 3/13/20.
 //  Copyright © 2020 Muhammad El-Arabi. All rights reserved.
 //
 
@@ -11,6 +11,7 @@ import Alamofire
 import SwiftyJSON
 import SDWebImage
 
+private let reuseIdentifier = "aCell"
 
 class HomeCollectionViewController: UICollectionViewController {
     
@@ -19,11 +20,11 @@ class HomeCollectionViewController: UICollectionViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getMovies()
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Register cell classes
-        self.collectionView!.register(UICollectionViewCell.self, forCellWithReuseIdentifier: "myCell")
         
         // Do any additional setup after loading the view.
     }
@@ -48,20 +49,25 @@ class HomeCollectionViewController: UICollectionViewController {
     
     override func collectionView(_ collectionView: UICollectionView, numberOfItemsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of items
-        return mainMoviesArr.count
+        return  mainMoviesArr.count
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "myCell", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
         
         // Configure the cell
-        let img : UIImageView = (cell.viewWithTag(5) as? UIImageView)!
-        print(mainMoviesArr[indexPath.row].image)
-        //        if mainMoviesArr[indexPath.row].image == nil {
-        img.sd_setImage(with: URL(string: "\("https://image.tmdb.org/t/p/w185")  \(mainMoviesArr[indexPath.row].image)" ), completed: nil)
-        //        }else{
-        //            img.image = UIImage.init(named: "no_img_avail")
-        //        }
+        let imageView = cell.viewWithTag(1) as! UIImageView
+        
+        if mainMoviesArr.count > 0{
+            
+            if mainMoviesArr[indexPath.row].image != "null" {
+                imageView.sd_setImage(with: URL(string: "\("https://image.tmdb.org/t/p/w185")\(mainMoviesArr[indexPath.row].image)" ), completed: nil)
+            }else{
+                imageView.image = UIImage.init(named: "no_img_avail")
+            }
+        }
+        
+        
         return cell
     }
     
@@ -81,22 +87,20 @@ class HomeCollectionViewController: UICollectionViewController {
      }
      */
     
-    
-    // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
-    override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
-        return false
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
-        return false
-    }
-    
-    override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
-        
-        print(mainMoviesArr[indexPath.row].image)
-    }
-    
-    
+    /*
+     // Uncomment these methods to specify if an action menu should be displayed for the specified item, and react to actions performed on the item
+     override func collectionView(_ collectionView: UICollectionView, shouldShowMenuForItemAt indexPath: IndexPath) -> Bool {
+     return false
+     }
+     
+     override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
+     return false
+     }
+     
+     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
+     
+     }
+     */
     func getMovies(){
         var movies : [Movie] = []
         AF.request("https://api.themoviedb.org/3/discover/movie?api_key=c8b0eb2f599e052e6d93b9ebacaa0b61&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1").responseJSON {
