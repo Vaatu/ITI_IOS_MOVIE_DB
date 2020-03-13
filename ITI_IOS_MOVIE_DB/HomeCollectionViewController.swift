@@ -120,16 +120,16 @@ class HomeCollectionViewController: UICollectionViewController {
         performSegue(withIdentifier: "showMovieDetails", sender: self)
         
     }
-
+    
     
     override func collectionView(_ collectionView: UICollectionView,
                                  didSelectItemAt indexPath: IndexPath){
         print("pressed")
         segueIndex = indexPath.row
-
+        
         performSegue(withIdentifier: "showMovieDetails", sender: self)
     }
-
+    
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMovieDetails" {
             let MovieDetails = segue.destination as! MovieDetails
@@ -192,7 +192,7 @@ class HomeCollectionViewController: UICollectionViewController {
             do {
                 try manageContext.save()
                 print("\("COREDATA SAVED")\(count)")
-
+                
             }catch let error{
                 
                 print(error)
@@ -207,16 +207,15 @@ class HomeCollectionViewController: UICollectionViewController {
         let manageContext  = appDelegate.persistentContainer.viewContext
         
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "SavedMovie")
-        
-            do {
+        do {
             var moviesArray = [NSManagedObject]()
             
             moviesArray = try manageContext.fetch(fetchReq)
             print("\("COREDATA GET")\(moviesArray.count)")
-
+            
             for obj in moviesArray {
                 print(obj.value(forKey: "mTitle")!)
-
+                
                 let movie : Movie = Movie()
                 
                 movie.id = obj.value(forKey: "mID") as! Int
