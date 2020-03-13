@@ -33,6 +33,9 @@ class MovieDetails: UIViewController {
             // Fallback on earlier versions
         }
         
+        movieTitle.text = movie.title
+        year.text = movie.release_date
+        overview.text = movie.overView
 
         // Do any additional setup after loading the view.
     }
