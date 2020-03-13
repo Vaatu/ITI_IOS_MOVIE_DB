@@ -3,6 +3,8 @@
     <device id="retina5_9" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
+
+
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
@@ -63,7 +65,7 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGi-2I-LMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1456.8" y="-461.82266009852219"/>
+            <point key="canvasLocation" x="5226.3999999999996" y="-461.82266009852219"/>
         </scene>
         <!--Movie Details-->
         <scene sceneID="rcG-TK-lnl">
@@ -156,7 +158,26 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZh-zT-pmI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2188" y="-461.08374384236453"/>
+            <point key="canvasLocation" x="5957.6000000000004" y="-461.08374384236453"/>
+        </scene>
+        <!--Item-->
+        <scene sceneID="roh-zN-p7u">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="KAL-UQ-nxX" sceneMemberID="viewController">
+                    <tabBarItem key="tabBarItem" title="Item" id="9VV-x4-vzP"/>
+                    <toolbarItems/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="gAO-W3-Mb0">
+                        <rect key="frame" x="0.0" y="44" width="375" height="44"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="dVB-JT-SE2" kind="relationship" relationship="rootViewController" id="2lh-GW-JjO"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="pgk-Rj-Rmh" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4284" y="-461.82266009852219"/>
         </scene>
     </scenes>
 </document>

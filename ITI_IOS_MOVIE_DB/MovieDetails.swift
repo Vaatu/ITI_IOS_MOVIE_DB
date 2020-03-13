@@ -22,17 +22,20 @@ class MovieDetails: UIViewController {
     @IBAction func btnReviews(_ sender: UIButton) {
     }
     
+
+
     var movie = Movie()
 
     
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        if #available(iOS 13.0, *) {
+//        if #available(iOS 13.0, *) {
 //            overrideUserInterfaceStyle = .dark
-        } else {
-            // Fallback on earlier versions
-        }
+//        } else {
+//            // Fallback on earlier versions
+//        }
+
         
         movieTitle.text = movie.title
         year.text = movie.release_date

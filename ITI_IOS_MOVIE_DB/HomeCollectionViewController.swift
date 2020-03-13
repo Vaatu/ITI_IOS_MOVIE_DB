@@ -22,6 +22,12 @@ class HomeCollectionViewController: UICollectionViewController {
     
     var segueIndex = -1
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewDidLoad()
+        self.navigationController?.isNavigationBarHidden = true
+
+    }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         if #available(iOS 13.0, *) {
@@ -29,7 +35,6 @@ class HomeCollectionViewController: UICollectionViewController {
         } else {
             // Fallback on earlier versions
         }
-        
         
         if reachability.isConnectedToNetwork() == true {
             getMovies()
@@ -170,6 +175,8 @@ class HomeCollectionViewController: UICollectionViewController {
     override func viewWillDisappear(_ animated: Bool) {
         if reachability.isConnectedToNetwork() == true {
         }
+        self.navigationController?.isNavigationBarHidden = false
+
     }
     func saveMoviesToDB(){
         
