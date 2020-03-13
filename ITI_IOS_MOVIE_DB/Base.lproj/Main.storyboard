@@ -15,7 +15,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xFO-SW-6ja">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VJZ-gj-mTQ">
                             <size key="itemSize" width="201" height="334"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -70,14 +70,6 @@
                         <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="6Df-iy-8wZ">
-                                <rect key="frame" x="87" y="44" width="201" height="342"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="6Df-iy-8wZ" secondAttribute="height" multiplier="169:320" constant="20.381250000000023" id="Kcr-VY-loS"/>
-                                    <constraint firstAttribute="width" constant="201" id="YMq-IP-WMf"/>
-                                    <constraint firstAttribute="height" constant="342" id="vgq-ec-Uii"/>
-                                </constraints>
-                            </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Title:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ndC-OS-tDX">
                                 <rect key="frame" x="16" y="456" width="47" height="25"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -138,20 +130,28 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="0iF-Qb-9mA">
+                                <rect key="frame" x="87" y="44" width="201" height="342"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="201" id="CbU-Q6-khX"/>
+                                    <constraint firstAttribute="height" constant="342" id="J6N-cq-v1u"/>
+                                    <constraint firstAttribute="width" secondItem="0iF-Qb-9mA" secondAttribute="height" multiplier="169:320" constant="20.381250000000023" id="K6x-6Q-vUw"/>
+                                </constraints>
+                            </imageView>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
-                            <constraint firstItem="6Df-iy-8wZ" firstAttribute="width" secondItem="6Df-iy-8wZ" secondAttribute="height" multiplier="169:320" constant="20.381250000000023" id="kDg-HB-enp"/>
+                            <constraint firstItem="0iF-Qb-9mA" firstAttribute="width" secondItem="0iF-Qb-9mA" secondAttribute="height" multiplier="169:320" constant="20.381250000000023" id="ZF2-yK-ljw"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="sWE-RS-hPW"/>
-                        <connections>
-                            <outlet property="movieTitle" destination="KSW-iv-aCz" id="Xc2-yL-rR5"/>
-                            <outlet property="overview" destination="uQj-i5-sDg" id="5HS-WZ-NSM"/>
-                            <outlet property="poster" destination="6Df-iy-8wZ" id="KWz-WQ-Gwh"/>
-                            <outlet property="releaseDate" destination="CJJ-5k-5o0" id="qZC-fA-w2u"/>
-                        </connections>
                     </view>
                     <navigationItem key="navigationItem" id="UCa-cp-ivI"/>
+                    <connections>
+                        <outlet property="imageView" destination="0iF-Qb-9mA" id="6rJ-ES-A4t"/>
+                        <outlet property="movieTitle" destination="KSW-iv-aCz" id="KgT-JM-egZ"/>
+                        <outlet property="overview" destination="uQj-i5-sDg" id="vXQ-au-so8"/>
+                        <outlet property="year" destination="CJJ-5k-5o0" id="Cxr-5b-m68"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZh-zT-pmI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
