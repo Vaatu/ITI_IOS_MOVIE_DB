@@ -15,11 +15,17 @@ private let reuseIdentifier = "aCell"
 
 class HomeCollectionViewController: UICollectionViewController {
     
+    var reachability = Reachability()
+    
     var mainMoviesArr : [Movie] = []
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        getMovies()
+        if reachability.isConnectedToNetwork() == true {
+                    getMovies()
+        } else {
+//            getMoviesCoreData()
+        }
         
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
