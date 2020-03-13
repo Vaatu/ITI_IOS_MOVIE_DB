@@ -10,11 +10,13 @@ import UIKit
 
 class MovieDetails: UIViewController {
 
+
     @IBOutlet weak var movieTitle: UILabel!
-    @IBOutlet weak var releaseDate: UILabel!
     @IBOutlet weak var overview: UITextView!
+    @IBOutlet weak var year: UILabel!
     
-    @IBOutlet weak var poster: UIImageView!
+    @IBOutlet weak var imageView: UIImageView!
+    
     
     @IBAction func btnReviews(_ sender: UIButton) {
     }
@@ -25,6 +27,11 @@ class MovieDetails: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .dark
+        } else {
+            // Fallback on earlier versions
+        }
         
 
         // Do any additional setup after loading the view.

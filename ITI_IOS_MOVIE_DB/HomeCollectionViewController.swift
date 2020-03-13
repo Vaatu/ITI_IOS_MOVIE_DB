@@ -24,6 +24,11 @@ class HomeCollectionViewController: UICollectionViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        if #available(iOS 13.0, *) {
+            overrideUserInterfaceStyle = .dark
+        } else {
+            // Fallback on earlier versions
+        }
         
         
         if reachability.isConnectedToNetwork() == true {
@@ -107,15 +112,21 @@ class HomeCollectionViewController: UICollectionViewController {
      override func collectionView(_ collectionView: UICollectionView, canPerformAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) -> Bool {
      return false
      }
-     */
      override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
         
+
+        
+     }
+    */
+    
+    override func collectionView(_ collectionView: UICollectionView,
+                                 didSelectItemAt indexPath: IndexPath){
+        print("pressed")
         segueIndex = indexPath.row
 
         performSegue(withIdentifier: "showMovieDetails", sender: self)
-        
-     }
-    
+    }
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showMovieDetails" {
             let MovieDetails = segue.destination as! MovieDetails
