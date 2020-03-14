@@ -12,7 +12,6 @@
 		9188512E241C05FB00655302 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188512D241C05FB00655302 /* MovieDetails.swift */; };
 		BC40D7210746C993357D9D51 /* Pods_ITI_IOS_MOVIE_DB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4516EE8088730B6C69381050 /* Pods_ITI_IOS_MOVIE_DB.framework */; };
 		DD1B6667241C2305007D8BE5 /* no_img_avail.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1B6666241C2305007D8BE5 /* no_img_avail.png */; };
-		DD1B6669241C266E007D8BE5 /* CosmosView.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD1B6668241C266E007D8BE5 /* CosmosView.swift */; };
 		DD6C2088241B1CFC00F399C4 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C2087241B1CFC00F399C4 /* HomeCollectionViewController.swift */; };
 		DD87858D241AE184003622A1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87858C241AE184003622A1 /* Movie.swift */; };
 		DDBB6633241ADFDE00A5802E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBB6632241ADFDE00A5802E /* AppDelegate.swift */; };
@@ -30,7 +29,6 @@
 		9188512D241C05FB00655302 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		969D96F5600D752E60F69BCA /* Pods-ITI_IOS_MOVIE_DB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITI_IOS_MOVIE_DB.release.xcconfig"; path = "Target Support Files/Pods-ITI_IOS_MOVIE_DB/Pods-ITI_IOS_MOVIE_DB.release.xcconfig"; sourceTree = "<group>"; };
 		DD1B6666241C2305007D8BE5 /* no_img_avail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_img_avail.png; sourceTree = "<group>"; };
-		DD1B6668241C266E007D8BE5 /* CosmosView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CosmosView.swift; sourceTree = "<group>"; };
 		DD6C2087241B1CFC00F399C4 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		DD87858C241AE184003622A1 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DDBB662F241ADFDE00A5802E /* ITI_IOS_MOVIE_DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITI_IOS_MOVIE_DB.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -96,7 +94,6 @@
 				DD6C2087241B1CFC00F399C4 /* HomeCollectionViewController.swift */,
 				DD87858C241AE184003622A1 /* Movie.swift */,
 				9188512D241C05FB00655302 /* MovieDetails.swift */,
-				DD1B6668241C266E007D8BE5 /* CosmosView.swift */,
 			);
 			path = ITI_IOS_MOVIE_DB;
 			sourceTree = "<group>";
@@ -229,7 +226,6 @@
 				DDBB663B241ADFDE00A5802E /* ITI_IOS_MOVIE_DB.xcdatamodeld in Sources */,
 				DD87858D241AE184003622A1 /* Movie.swift in Sources */,
 				DD6C2088241B1CFC00F399C4 /* HomeCollectionViewController.swift in Sources */,
-				DD1B6669241C266E007D8BE5 /* CosmosView.swift in Sources */,
 				9188512C241BF70500655302 /* Reachability.swift in Sources */,
 				DDBB6633241ADFDE00A5802E /* AppDelegate.swift in Sources */,
 				9188512E241C05FB00655302 /* MovieDetails.swift in Sources */,

@@ -7,27 +7,27 @@
 //
 
 import UIKit
-
+import Cosmos
 
 class MovieDetails: UIViewController {
-
-
+    
+    
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var overview: UITextView!
     @IBOutlet weak var year: UILabel!
     
     @IBOutlet weak var imageView: UIImageView!
     
+    @IBOutlet weak var ratingView: CosmosView!
+    
     
     @IBAction func btnReviews(_ sender: UIButton) {
     }
     
-
-
+    
+    
     var movie = Movie()
-
-    
-    
+   
     override func viewDidLoad() {
         super.viewDidLoad()
 //        if #available(iOS 13.0, *) {
@@ -40,21 +40,23 @@ class MovieDetails: UIViewController {
         movieTitle.text = movie.title
         year.text = movie.release_date
         overview.text = movie.overView
-        
         imageView.sd_setImage(with: URL(string: "\("https://image.tmdb.org/t/p/w185")\(movie.image)" ), completed: nil)
-
+        ratingView.rating = movie.vote_average/2
+        ratingView.settings.updateOnTouch = false
         // Do any additional setup after loading the view.
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
+    override func viewWillDisappear(_ animated: Bool) {
+       
     }
-    */
-
+    /*
+     // MARK: - Navigation
+     
+     // In a storyboard-based application, you will often want to do a little preparation before navigation
+     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+     // Get the new view controller using segue.destination.
+     // Pass the selected object to the new view controller.
+     }
+     */
+    
 }
