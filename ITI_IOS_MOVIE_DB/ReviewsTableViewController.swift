@@ -14,7 +14,7 @@ import SDWebImage
 class ReviewsTableViewController: UITableViewController {
     
     var reviewsArr : [Reviews] = []
-    var movie : Movie = Movie()
+    var movieID : String = ""
     
     
     override func viewDidLoad() {
@@ -99,7 +99,7 @@ class ReviewsTableViewController: UITableViewController {
     
     func getReviews(){
         var reviews : [Reviews] = []
-        AF.request("https://api.themoviedb.org/3/movie/\(movie.id)/reviews?api_key=c8b0eb2f599e052e6d93b9ebacaa0b61").responseJSON {
+        AF.request("https://api.themoviedb.org/3/movie/\(movieID)/reviews?api_key=c8b0eb2f599e052e6d93b9ebacaa0b61").responseJSON {
             
             response in
             switch response.result {
