@@ -1,9 +1,11 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KAL-UQ-nxX">
-    <device id="retina5_9" orientation="portrait" appearance="light"/>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="KAL-UQ-nxX">
+    <device id="retina5_9" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
     <dependencies>
         <deployment identifier="iOS"/>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
@@ -15,7 +17,7 @@
                     <collectionView key="view" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" dataMode="prototypes" id="xFO-SW-6ja">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <collectionViewFlowLayout key="collectionViewLayout" minimumLineSpacing="10" minimumInteritemSpacing="10" id="VJZ-gj-mTQ">
                             <size key="itemSize" width="201" height="334"/>
                             <size key="headerReferenceSize" width="0.0" height="0.0"/>
@@ -138,7 +140,11 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                        <constraints>
+                            <constraint firstItem="0iF-Qb-9mA" firstAttribute="leading" secondItem="sWE-RS-hPW" secondAttribute="leading" constant="16" id="66A-vQ-h48"/>
+                            <constraint firstItem="0iF-Qb-9mA" firstAttribute="top" secondItem="27J-q2-LcE" secondAttribute="top" constant="37" id="lyv-C8-dVm"/>
+                        </constraints>
                         <viewLayoutGuide key="safeArea" id="sWE-RS-hPW"/>
                     </view>
                     <navigationItem key="navigationItem" id="UCa-cp-ivI"/>
@@ -146,6 +152,7 @@
                         <outlet property="imageView" destination="0iF-Qb-9mA" id="6rJ-ES-A4t"/>
                         <outlet property="movieTitle" destination="KSW-iv-aCz" id="KgT-JM-egZ"/>
                         <outlet property="overview" destination="uQj-i5-sDg" id="vXQ-au-so8"/>
+                        <outlet property="ratingView" destination="iWc-jg-4ug" id="BwF-7c-m89"/>
                         <outlet property="year" destination="CJJ-5k-5o0" id="Cxr-5b-m68"/>
                     </connections>
                 </viewController>

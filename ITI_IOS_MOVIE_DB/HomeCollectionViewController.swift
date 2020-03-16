@@ -162,6 +162,7 @@ class HomeCollectionViewController: UICollectionViewController {
                     movies = moviesArr as! [Movie]
                     self.mainMoviesArr = movies
                     self.collectionView.reloadData()
+                    self.saveMoviesToDB()
                 }
                 print("Loaded Online")
             case .failure(let error):
@@ -173,7 +174,6 @@ class HomeCollectionViewController: UICollectionViewController {
     
     override func viewWillDisappear(_ animated: Bool) {
         if reachability.isConnectedToNetwork() == true {
-            saveMoviesToDB()
         }
         self.navigationController?.isNavigationBarHidden = false
 
