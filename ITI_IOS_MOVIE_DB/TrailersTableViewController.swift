@@ -7,11 +7,14 @@
 //
 
 import UIKit
-
+import Alamofire
+import SwiftyJSON
+import youtube_ios_player_helper
 
 class TrailersTableViewController: UITableViewController {
 
-    
+    var trailersArr : [Trailers] = []
+    var moviID : String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -31,18 +34,21 @@ class TrailersTableViewController: UITableViewController {
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return trailersArr.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
         // Configure the cell...
+        
+        let ytView = cell.viewWithTag(13) as! YTPlayerView
+        ytView.load(withVideoId: trailersArr[indexPath.row].trail)
 
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.
@@ -89,4 +95,24 @@ class TrailersTableViewController: UITableViewController {
     }
     */
 
+    
+    func getTrailers(){
+        var trailers : [Trailers] = []
+        AF.request("https://api.themoviedb.org/3/movie/\(moviID)/reviews?api_key=c8b0eb2f599e052e6d93b9ebacaa0b61").responseJSON {
+            
+            response in
+            switch response.result {
+            case .success(let value) :
+                let json = JSON(value)
+                
+                if let revArr = json["results"].toArrOf(type:Trailers.self){
+                    trailers = revArr as! [Trailers]
+                    self.trailersArr = trailers
+                    self.tableView.reloadData()
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
+    }
 }
