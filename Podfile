@@ -10,4 +10,5 @@ target 'ITI_IOS_MOVIE_DB' do
   pod 'Alamofire'
   pod 'SwiftyJSON'
   pod 'Cosmos', '~> 18.0'
+  pod "youtube-ios-player-helper", "~> 0.1.4"
 end

@@ -8,6 +8,7 @@
 
 import UIKit
 import Cosmos
+import youtube_ios_player_helper
 
 class MovieDetails: UIViewController {
     
@@ -24,6 +25,7 @@ class MovieDetails: UIViewController {
     @IBAction func btnReviews(_ sender: UIButton) {
     }
     
+    @IBOutlet weak var youtubeplayer: YTPlayerView!
     
     
     var movie = Movie()
@@ -35,8 +37,8 @@ class MovieDetails: UIViewController {
 //        } else {
 //            // Fallback on earlier versions
 //        }
-
-        
+print(movie.id)
+        youtubeplayer.load(withVideoId: "tXaVr1yTrQo")
         movieTitle.text = movie.title
         year.text = movie.release_date
         overview.text = movie.overView
