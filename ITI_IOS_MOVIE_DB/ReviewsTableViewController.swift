@@ -41,7 +41,7 @@ class ReviewsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "aCell", for: indexPath)
         
         // Configure the cell...
         var author = cell.viewWithTag(10) as! UITextView
