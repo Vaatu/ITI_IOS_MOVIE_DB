@@ -12,7 +12,6 @@ import SwiftyJSON
 import SDWebImage
 import CoreData
 
-private let reuseIdentifier = "aCell"
 
 class HomeCollectionViewController: UICollectionViewController {
     
@@ -74,7 +73,7 @@ class HomeCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "aCell", for: indexPath)
         
         // Configure the cell
         let imageView = cell.viewWithTag(1) as! UIImageView
