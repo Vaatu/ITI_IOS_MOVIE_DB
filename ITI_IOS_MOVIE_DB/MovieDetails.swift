@@ -25,7 +25,7 @@ class MovieDetails: UIViewController {
     @IBAction func btnReviews(_ sender: UIButton) {
     }
     
-    @IBOutlet weak var youtubeplayer: YTPlayerView!
+   
     
     
     var movie = Movie()
@@ -38,13 +38,13 @@ class MovieDetails: UIViewController {
 //            // Fallback on earlier versions
 //        }
 print(movie.id)
-        youtubeplayer.load(withVideoId: "tXaVr1yTrQo")
+        
         movieTitle.text = movie.title
         year.text = movie.release_date
         overview.text = movie.overView
         imageView.sd_setImage(with: URL(string: "\("https://image.tmdb.org/t/p/w185")\(movie.image)" ), completed: nil)
-        ratingView.rating = movie.vote_average/2
-        ratingView.settings.updateOnTouch = false
+//        ratingView.rating = movie.vote_average/2
+//        ratingView.settings.updateOnTouch = false
         // Do any additional setup after loading the view.
     }
     
