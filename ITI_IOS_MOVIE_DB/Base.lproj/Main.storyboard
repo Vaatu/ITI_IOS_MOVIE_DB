@@ -1,8 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mdv-JA-avZ">
-    <device id="retina5_9" orientation="portrait">
-        <adaptation id="fullscreen"/>
-    </device>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15505" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Mdv-JA-avZ">
+    <device id="retina5_9" orientation="portrait" appearance="light"/>
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15510"/>
@@ -10,7 +8,7 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
-        <!--Home Collection View Controller-->
+        <!--Home-->
         <scene sceneID="MA3-e6-meS">
             <objects>
                 <collectionViewController id="dVB-JT-SE2" customClass="HomeCollectionViewController" customModule="ITI_IOS_MOVIE_DB" customModuleProvider="target" sceneMemberID="viewController">
@@ -56,6 +54,7 @@
                             <outlet property="delegate" destination="dVB-JT-SE2" id="O6j-z1-YY8"/>
                         </connections>
                     </collectionView>
+                    <tabBarItem key="tabBarItem" title="Home" id="1Ba-0r-wV6"/>
                     <navigationItem key="navigationItem" id="s2N-1W-OY0"/>
                     <connections>
                         <segue destination="t0h-7h-CWW" kind="show" identifier="showMovieDetails" id="94q-AX-DuW"/>
@@ -63,14 +62,14 @@
                 </collectionViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="kGi-2I-LMp" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="7111.1999999999998" y="-461.82266009852219"/>
+            <point key="canvasLocation" x="8053.6000000000004" y="-461.82266009852219"/>
         </scene>
         <!--Movie Details-->
         <scene sceneID="rcG-TK-lnl">
             <objects>
                 <viewController id="t0h-7h-CWW" customClass="MovieDetails" customModule="ITI_IOS_MOVIE_DB" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" userInteractionEnabled="NO" contentMode="scaleToFill" id="27J-q2-LcE" customClass="MovieDetails">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="758"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Overview:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="8po-Le-zpu">
@@ -155,7 +154,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IZh-zT-pmI" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="8455.2000000000007" y="-461.08374384236453"/>
+            <point key="canvasLocation" x="9397.6000000000004" y="-461.08374384236453"/>
         </scene>
         <!--Reviews Table View Controller-->
         <scene sceneID="bta-SY-8nO">
@@ -200,7 +199,36 @@
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyg-g8-4Rj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9420" y="-462.5615763546798"/>
+            <point key="canvasLocation" x="10362.4" y="-462.5615763546798"/>
+        </scene>
+        <!--Favorites-->
+        <scene sceneID="6oz-Fh-xke">
+            <objects>
+                <tableViewController id="NeB-96-fM0" customClass="Favorites" customModule="ITI_IOS_MOVIE_DB" customModuleProvider="target" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="9qI-Ol-mxQ">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" preservesSuperviewLayoutMargins="YES" selectionStyle="default" indentationWidth="10" id="4fK-O4-btX">
+                                <rect key="frame" x="0.0" y="28" width="375" height="43.666667938232422"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" preservesSuperviewLayoutMargins="YES" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="4fK-O4-btX" id="HNa-wr-UXp">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43.666667938232422"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="NeB-96-fM0" id="9qz-20-A6k"/>
+                            <outlet property="delegate" destination="NeB-96-fM0" id="Bkg-EQ-hSd"/>
+                        </connections>
+                    </tableView>
+                    <tabBarItem key="tabBarItem" title="Favorites" id="nJF-ty-HcU"/>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="a25-jq-UUk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="8054" y="-1202"/>
         </scene>
         <!--Item-->
         <scene sceneID="8Sd-sJ-F96">
@@ -214,12 +242,31 @@
                     </navigationBar>
                     <nil name="viewControllers"/>
                     <connections>
-                        <segue destination="dVB-JT-SE2" kind="relationship" relationship="rootViewController" id="HC0-qQ-IYD"/>
+                        <segue destination="0p0-O5-ioM" kind="relationship" relationship="rootViewController" id="HC0-qQ-IYD"/>
                     </connections>
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cpK-DM-r5C" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="6168.8000000000002" y="-461.82266009852219"/>
+        </scene>
+        <!--Tab Bar Controller-->
+        <scene sceneID="NpI-tM-epd">
+            <objects>
+                <tabBarController automaticallyAdjustsScrollViewInsets="NO" id="0p0-O5-ioM" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Xwe-BL-tgh"/>
+                    <tabBar key="tabBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="lYR-Jw-wQo">
+                        <autoresizingMask key="autoresizingMask"/>
+                        <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+                    </tabBar>
+                    <connections>
+                        <segue destination="dVB-JT-SE2" kind="relationship" relationship="viewControllers" id="yRm-dJ-muo"/>
+                        <segue destination="NeB-96-fM0" kind="relationship" relationship="viewControllers" id="OnN-3v-MQs"/>
+                    </connections>
+                </tabBarController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="xKK-K6-gHa" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="7111.1999999999998" y="-461.82266009852219"/>
         </scene>
     </scenes>
 </document>
