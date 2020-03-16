@@ -134,17 +134,6 @@
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="KAr-S3-7ec">
-                                <rect key="frame" x="218" y="733" width="90" height="36"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Reviews &gt;">
-                                    <color key="titleColor" cocoaTouchSystemColor="scrollViewTexturedBackgroundColor"/>
-                                </state>
-                                <connections>
-                                    <segue destination="eZa-kX-Q6G" kind="custom" identifier="showReviews" id="jrs-mb-is4"/>
-                                </connections>
-                            </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="baV-J8-IhY">
                                 <rect key="frame" x="81" y="733" width="70" height="36"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
@@ -154,6 +143,16 @@
                                 </state>
                                 <connections>
                                     <action selector="btnFavorite:" destination="t0h-7h-CWW" eventType="touchUpInside" id="2nc-pL-gsA"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="W8G-Qv-iD1">
+                                <rect key="frame" x="237" y="734" width="83" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="18"/>
+                                <state key="normal" title="Reviews &gt;"/>
+                                <connections>
+                                    <action selector="btnReviews:" destination="27J-q2-LcE" eventType="touchUpInside" id="fRR-5u-WRQ"/>
+                                    <segue destination="eZa-kX-Q6G" kind="show" identifier="showReviews" id="nJE-VF-C3E"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -212,6 +211,7 @@
                             <outlet property="delegate" destination="eZa-kX-Q6G" id="gqo-Lo-gUw"/>
                         </connections>
                     </tableView>
+                    <navigationItem key="navigationItem" id="j1s-XU-1dd"/>
                 </tableViewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cyg-g8-4Rj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>

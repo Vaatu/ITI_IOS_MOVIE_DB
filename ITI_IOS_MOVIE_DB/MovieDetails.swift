@@ -25,9 +25,20 @@ class MovieDetails: UIViewController {
     
     
     @IBAction func btnReviews(_ sender: UIButton) {
+        performSegue(withIdentifier: "showReviews", sender: self)
+        print("pressed yooo")
     }
     
-   
+    
+
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "showReviews" {
+        let reviewsTV = segue.destination as! ReviewsTableViewController
+            reviewsTV.movieID = movie.id
+        }
+    }
+    
     @IBAction func btnFavorite(_ sender: UIButton) {
         
         let favoriteMovie = NSEntityDescription.entity(forEntityName: "Favorited", in: context)

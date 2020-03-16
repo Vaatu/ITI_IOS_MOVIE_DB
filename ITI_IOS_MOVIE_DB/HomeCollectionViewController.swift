@@ -138,12 +138,12 @@ class HomeCollectionViewController: UICollectionViewController {
         if segue.identifier == "showMovieDetails" {
             let MovieDetails = segue.destination as! MovieDetails
             MovieDetails.movie = mainMoviesArr[segueIndex]
-        }else if segue.identifier == "showReviews" {
-            let reviewsTV = segue.destination as! ReviewsTableViewController
-            reviewsTV.movieID = mainMoviesArr[segueIndex].id
-        }else if  segue.identifier == "showTrailers" {
-            let trailersTV = segue.destination as! TrailersTableViewController
-            trailersTV.movieID = mainMoviesArr[segueIndex].id
+//        }else if segue.identifier == "showReviews" {
+//            let reviewsTV = segue.destination as! ReviewsTableViewController
+//            reviewsTV.movieID = mainMoviesArr[segueIndex].id
+//        }else if  segue.identifier == "showTrailers" {
+//            let trailersTV = segue.destination as! TrailersTableViewController
+//            trailersTV.movieID = mainMoviesArr[segueIndex].id
         }
     }
     
