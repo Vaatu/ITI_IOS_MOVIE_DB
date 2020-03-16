@@ -74,7 +74,7 @@ class HomeCollectionViewController: UICollectionViewController {
     }
     
     override func collectionView(_ collectionView: UICollectionView, cellForItemAt indexPath: IndexPath) -> UICollectionViewCell {
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: reuseIdentifier, for: indexPath)
+        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: "reuseIdentifier", for: indexPath)
         
         // Configure the cell
         let imageView = cell.viewWithTag(1) as! UIImageView
@@ -139,6 +139,12 @@ class HomeCollectionViewController: UICollectionViewController {
         if segue.identifier == "showMovieDetails" {
             let MovieDetails = segue.destination as! MovieDetails
             MovieDetails.movie = mainMoviesArr[segueIndex]
+        }else if segue.identifier == "showReviews" {
+            let reviewsTV = segue.destination as! ReviewsTableViewController
+            reviewsTV.movieID = mainMoviesArr[segueIndex].id
+        }else if  segue.identifier == "showTrailers" {
+            let trailersTV = segue.destination as! TrailersTableViewController
+            trailersTV.movieID = mainMoviesArr[segueIndex].id
         }
     }
     

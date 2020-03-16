@@ -10,6 +10,7 @@ import Foundation
 import SwiftyJSON
 class Trailers : JSONable{
     var trail : String
+    
     required init?(parameter: JSON) {
         trail = parameter["key"].stringValue
     }
