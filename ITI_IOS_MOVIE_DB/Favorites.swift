@@ -7,40 +7,54 @@
 //
 
 import UIKit
+import CoreData
 
 class Favorites: UITableViewController {
+
+    var titleArray = [NSManagedObject]()
+    var arr : [String]?
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
 
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        // Uncomment the following line to preserve selection between presentations
-        // self.clearsSelectionOnViewWillAppear = false
-
-        // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
-        // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        let request = NSFetchRequest<NSManagedObject>(entityName: "Favorited")
+        
+        do {
+           titleArray = try context.fetch(request)
+        } catch  {
+            print("Error Loading Favourites")
+        }
+        
+        
+        
     }
 
     // MARK: - Table view data source
 
     override func numberOfSections(in tableView: UITableView) -> Int {
         // #warning Incomplete implementation, return the number of sections
-        return 0
+        return 1
     }
 
     override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         // #warning Incomplete implementation, return the number of rows
-        return 0
+        return titleArray.count
     }
 
-    /*
+    
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
 
-        // Configure the cell...
-
+        
+        for item in titleArray {
+            let myTitle = item.value(forKey: "title")
+            arr?.append(myTitle as! String)
+        }
+        cell.textLabel?.text = arr![indexPath.row]
         return cell
     }
-    */
+    
 
     /*
     // Override to support conditional editing of the table view.

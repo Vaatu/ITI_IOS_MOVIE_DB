@@ -9,9 +9,11 @@
 import UIKit
 import Cosmos
 import youtube_ios_player_helper
+import CoreData
 
 class MovieDetails: UIViewController {
     
+    let context = (UIApplication.shared.delegate as! AppDelegate).persistentContainer.viewContext
     
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var overview: UITextView!
@@ -26,6 +28,17 @@ class MovieDetails: UIViewController {
     }
     
    
+    @IBAction func btnFavorite(_ sender: UIButton) {
+        
+        let favoriteMovie = NSEntityDescription.entity(forEntityName: "Favorited", in: context)
+        favoriteMovie?.setValue(movieTitle.text, forKey: "title")
+        do {
+            try context.save()
+        } catch  {
+            print("Error Saving Favorite")
+        }
+ 
+    }
     
     
     var movie = Movie()
