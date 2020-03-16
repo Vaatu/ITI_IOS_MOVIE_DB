@@ -16,6 +16,7 @@
 		DD6E54D7241FD9B00070C3FD /* Arabokka.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6E54D6241FD9B00070C3FD /* Arabokka.storyboard */; };
 		DD6E54D9241FDBB80070C3FD /* ReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E54D8241FDBB80070C3FD /* ReviewsTableViewController.swift */; };
 		DD6E54DB241FDC4B0070C3FD /* Reviews.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E54DA241FDC4B0070C3FD /* Reviews.swift */; };
+		DD6E54DD241FF07F0070C3FD /* TrailersTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E54DC241FF07F0070C3FD /* TrailersTableViewController.swift */; };
 		DD87858D241AE184003622A1 /* Movie.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD87858C241AE184003622A1 /* Movie.swift */; };
 		DDBB6633241ADFDE00A5802E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = DDBB6632241ADFDE00A5802E /* AppDelegate.swift */; };
 		DDBB6638241ADFDE00A5802E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DDBB6636241ADFDE00A5802E /* Main.storyboard */; };
@@ -36,6 +37,7 @@
 		DD6E54D6241FD9B00070C3FD /* Arabokka.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Arabokka.storyboard; sourceTree = "<group>"; };
 		DD6E54D8241FDBB80070C3FD /* ReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewController.swift; sourceTree = "<group>"; };
 		DD6E54DA241FDC4B0070C3FD /* Reviews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Reviews.swift; sourceTree = "<group>"; };
+		DD6E54DC241FF07F0070C3FD /* TrailersTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TrailersTableViewController.swift; sourceTree = "<group>"; };
 		DD87858C241AE184003622A1 /* Movie.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Movie.swift; sourceTree = "<group>"; };
 		DDBB662F241ADFDE00A5802E /* ITI_IOS_MOVIE_DB.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ITI_IOS_MOVIE_DB.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		DDBB6632241ADFDE00A5802E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -103,6 +105,7 @@
 				DD6E54D6241FD9B00070C3FD /* Arabokka.storyboard */,
 				DD6E54D8241FDBB80070C3FD /* ReviewsTableViewController.swift */,
 				DD6E54DA241FDC4B0070C3FD /* Reviews.swift */,
+				DD6E54DC241FF07F0070C3FD /* TrailersTableViewController.swift */,
 			);
 			path = ITI_IOS_MOVIE_DB;
 			sourceTree = "<group>";
@@ -238,6 +241,7 @@
 				DD6E54D9241FDBB80070C3FD /* ReviewsTableViewController.swift in Sources */,
 				DD6C2088241B1CFC00F399C4 /* HomeCollectionViewController.swift in Sources */,
 				9188512C241BF70500655302 /* Reachability.swift in Sources */,
+				DD6E54DD241FF07F0070C3FD /* TrailersTableViewController.swift in Sources */,
 				DD6E54DB241FDC4B0070C3FD /* Reviews.swift in Sources */,
 				DDBB6633241ADFDE00A5802E /* AppDelegate.swift in Sources */,
 				9188512E241C05FB00655302 /* MovieDetails.swift in Sources */,
