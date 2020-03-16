@@ -14,7 +14,7 @@ import SDWebImage
 class ReviewsTableViewController: UITableViewController {
     
     var reviewsArr : [Reviews] = []
-    var movieID : String = ""
+    var movieID : Int = 0
     
     
     override func viewDidLoad() {
@@ -41,7 +41,7 @@ class ReviewsTableViewController: UITableViewController {
     
     
     override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "reuseIdentifier", for: indexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "myCell", for: indexPath)
         
         // Configure the cell...
         var author = cell.viewWithTag(10) as! UITextView
