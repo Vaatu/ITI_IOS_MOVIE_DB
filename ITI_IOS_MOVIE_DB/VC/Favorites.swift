@@ -64,17 +64,38 @@ class Favorites: UITableViewController {
      }
      */
     
-    /*
+    
      // Override to support editing the table view.
      override func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
      if editingStyle == .delete {
      // Delete the row from the data source
+        
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
+        
+        let manageContext  = appDelegate.persistentContainer.viewContext
+        
+        // 3 del from manage context
+        
+        manageContext.delete(titleArray[indexPath.row])
+        
+        do {
+            try manageContext.save()
+            
+        }catch let error{
+            
+            print (error)
+            
+        }
+        titleArray.remove(at: indexPath.row)
+        arr.remove(at: indexPath.row)
+        
+        
      tableView.deleteRows(at: [indexPath], with: .fade)
      } else if editingStyle == .insert {
      // Create a new instance of the appropriate class, insert it into the array, and add a new row to the table view
      }
      }
-     */
+    
     
     /*
      // Override to support rearranging the table view.
@@ -110,13 +131,13 @@ class Favorites: UITableViewController {
         
         let fetchReq = NSFetchRequest<NSManagedObject>(entityName: "Favorited")
         do {
-            var moviesArray = [NSManagedObject]()
+            var titleArray = [NSManagedObject]()
             
-            moviesArray = try manageContext.fetch(fetchReq)
+            titleArray = try manageContext.fetch(fetchReq)
             
-            for obj in moviesArray {
+            for obj in titleArray {
                 
-//                titleArray.append(obj)
+                self.titleArray.append(obj)
                 arr.append(obj.value(forKey: "title") as! String)
             }
             
