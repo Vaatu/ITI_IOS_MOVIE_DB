@@ -20,11 +20,19 @@ class ReviewsTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         getReviews()
+        tableView.reloadData()
+        tableView.rowHeight = UITableView.automaticDimension
+        
         // Uncomment the following line to preserve selection between presentations
         // self.clearsSelectionOnViewWillAppear = false
         
         // Uncomment the following line to display an Edit button in the navigation bar for this view controller.
         // self.navigationItem.rightBarButtonItem = self.editButtonItem
+        tableView.estimatedRowHeight = 240
+    }
+    
+    override func tableView(_ tableView: UITableView, heightForRowAt indexPath: IndexPath) -> CGFloat {
+        return 240
     }
     
     // MARK: - Table view data source
@@ -44,10 +52,16 @@ class ReviewsTableViewController: UITableViewController {
         let cell = tableView.dequeueReusableCell(withIdentifier: "aCell", for: indexPath)
         
         // Configure the cell...
+        if reviewsArr.count > 0{
         var author = cell.viewWithTag(10) as! UITextView
         author.text = reviewsArr[indexPath.row].author
         var review = cell.viewWithTag(11) as! UITextView
         review.text = reviewsArr[indexPath.row].review
+        print(reviewsArr[indexPath.row].review)
+        }else{
+            var author = cell.viewWithTag(10) as! UITextView
+            author.text = "No Reviews Yet"
+        }
         return cell
     }
     
@@ -109,13 +123,14 @@ class ReviewsTableViewController: UITableViewController {
                 if let revArr = json["results"].toArrOf(type:Reviews.self){
                     reviews = revArr as! [Reviews]
                     self.reviewsArr = reviews
-                    self.tableView.reloadData()
-                    //                    self.saveMoviesToDB()
+                    self.tableView.reloadData()                    
                 }
             case .failure(let error):
                 print(error)
             }
+            
         }
+        self.tableView.reloadData()
     }
     
 }
