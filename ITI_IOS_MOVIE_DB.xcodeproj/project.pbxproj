@@ -13,6 +13,7 @@
 		9188512E241C05FB00655302 /* MovieDetails.swift in Sources */ = {isa = PBXBuildFile; fileRef = 9188512D241C05FB00655302 /* MovieDetails.swift */; };
 		BC40D7210746C993357D9D51 /* Pods_ITI_IOS_MOVIE_DB.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 4516EE8088730B6C69381050 /* Pods_ITI_IOS_MOVIE_DB.framework */; };
 		DD1B6667241C2305007D8BE5 /* no_img_avail.png in Resources */ = {isa = PBXBuildFile; fileRef = DD1B6666241C2305007D8BE5 /* no_img_avail.png */; };
+		DD6B12C42421289600FADAF5 /* video-active-512.png in Resources */ = {isa = PBXBuildFile; fileRef = DD6B12C32421289600FADAF5 /* video-active-512.png */; };
 		DD6C2088241B1CFC00F399C4 /* HomeCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6C2087241B1CFC00F399C4 /* HomeCollectionViewController.swift */; };
 		DD6E54D7241FD9B00070C3FD /* Arabokka.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = DD6E54D6241FD9B00070C3FD /* Arabokka.storyboard */; };
 		DD6E54D9241FDBB80070C3FD /* ReviewsTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = DD6E54D8241FDBB80070C3FD /* ReviewsTableViewController.swift */; };
@@ -36,6 +37,7 @@
 		9188512D241C05FB00655302 /* MovieDetails.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MovieDetails.swift; sourceTree = "<group>"; };
 		969D96F5600D752E60F69BCA /* Pods-ITI_IOS_MOVIE_DB.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ITI_IOS_MOVIE_DB.release.xcconfig"; path = "Target Support Files/Pods-ITI_IOS_MOVIE_DB/Pods-ITI_IOS_MOVIE_DB.release.xcconfig"; sourceTree = "<group>"; };
 		DD1B6666241C2305007D8BE5 /* no_img_avail.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = no_img_avail.png; sourceTree = "<group>"; };
+		DD6B12C32421289600FADAF5 /* video-active-512.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "video-active-512.png"; sourceTree = "<group>"; };
 		DD6C2087241B1CFC00F399C4 /* HomeCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeCollectionViewController.swift; sourceTree = "<group>"; };
 		DD6E54D6241FD9B00070C3FD /* Arabokka.storyboard */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; path = Arabokka.storyboard; sourceTree = "<group>"; };
 		DD6E54D8241FDBB80070C3FD /* ReviewsTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReviewsTableViewController.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 		DD6B12C224202AE600FADAF5 /* Images */ = {
 			isa = PBXGroup;
 			children = (
+				DD6B12C32421289600FADAF5 /* video-active-512.png */,
 				DD1B6666241C2305007D8BE5 /* no_img_avail.png */,
 			);
 			path = Images;
@@ -221,6 +224,7 @@
 				DDBB6640241ADFDF00A5802E /* LaunchScreen.storyboard in Resources */,
 				DDBB663D241ADFDF00A5802E /* Assets.xcassets in Resources */,
 				DD6E54D7241FD9B00070C3FD /* Arabokka.storyboard in Resources */,
+				DD6B12C42421289600FADAF5 /* video-active-512.png in Resources */,
 				DDBB6638241ADFDE00A5802E /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

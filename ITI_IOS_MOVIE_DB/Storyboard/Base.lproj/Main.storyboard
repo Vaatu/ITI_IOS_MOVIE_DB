@@ -92,7 +92,7 @@
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Release Date:" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m0H-Fr-Lkt">
-                                <rect key="frame" x="237" y="358" width="108" height="19"/>
+                                <rect key="frame" x="237" y="347" width="108" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -108,11 +108,11 @@
                                 <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                             </textView>
                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" tag="1" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2uj-ym-hRH">
-                                <rect key="frame" x="16" y="96" width="201" height="342"/>
+                                <rect key="frame" x="16" y="96" width="201" height="299"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Year" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QOC-wF-bwL">
-                                <rect key="frame" x="237" y="387" width="108" height="19"/>
+                                <rect key="frame" x="237" y="376" width="108" height="19"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" name="ArialMT" family="Arial" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -142,6 +142,17 @@
                                     </userDefinedRuntimeAttribute>
                                 </userDefinedRuntimeAttributes>
                             </view>
+                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="jII-bD-e7p">
+                                <rect key="frame" x="67" y="403" width="240" height="128"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Apb-ng-phz">
+                                <rect key="frame" x="70" y="406" width="234" height="122"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <connections>
+                                    <action selector="showTrailersBtn:" destination="fhI-4u-TKJ" eventType="touchUpInside" id="pLU-bW-bew"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <viewLayoutGuide key="safeArea" id="SCa-lr-Nwo"/>
@@ -151,12 +162,13 @@
                         <outlet property="movieTitle" destination="hRx-rE-tox" id="fSv-mt-VIh"/>
                         <outlet property="overview" destination="w5z-Gv-r4x" id="gdR-aI-rMs"/>
                         <outlet property="ratingView" destination="pas-Wm-7f0" id="wAR-LL-BQa"/>
+                        <outlet property="trailersimage" destination="jII-bD-e7p" id="gu1-eV-LzV"/>
                         <outlet property="year" destination="QOC-wF-bwL" id="x9E-Nm-0OF"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3vI-9r-CM7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="9071" y="-463"/>
+            <point key="canvasLocation" x="9069.6000000000004" y="-463.30049261083747"/>
         </scene>
         <!--Reviews Table View Controller-->
         <scene sceneID="bta-SY-8nO">
@@ -275,7 +287,7 @@
         <!--Trailers Table View Controller-->
         <scene sceneID="By8-FC-8Jw">
             <objects>
-                <tableViewController id="bfB-y7-KT3" customClass="TrailersTableViewController" customModule="ITI_IOS_MOVIE_DB" customModuleProvider="target" sceneMemberID="viewController">
+                <tableViewController storyboardIdentifier="TheTrailers" id="bfB-y7-KT3" customClass="TrailersTableViewController" customModule="ITI_IOS_MOVIE_DB" customModuleProvider="target" sceneMemberID="viewController">
                     <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" id="Fg2-PP-p5t">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="812"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
