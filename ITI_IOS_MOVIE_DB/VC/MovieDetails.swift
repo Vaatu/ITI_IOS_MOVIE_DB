@@ -25,12 +25,17 @@ class MovieDetails: UIViewController {
     
     
     @IBAction func btnReviews(_ sender: UIButton) {
-        performSegue(withIdentifier: "showReviews", sender: self)
         print("pressed yooo")
+        performSegue(withIdentifier: "showReviews", sender: self)
+        
     }
     
     
+    @IBAction func testBtn(_ sender: UIButton) {
+        print("pressed yooo")
 
+    }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "showReviews" {
