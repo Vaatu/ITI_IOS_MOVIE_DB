@@ -43,11 +43,20 @@ class MovieDetails: UIViewController {
 //    }
     
     @IBAction func btnFavorite(_ sender: UIButton) {
+        let appDelegate = UIApplication.shared.delegate as! AppDelegate
         
-        let favoriteMovie = NSEntityDescription.entity(forEntityName: "Favorited", in: context)
-        favoriteMovie?.setValue(movieTitle.text, forKey: "title")
+        let manageContext  = appDelegate.persistentContainer.viewContext
+        
+        let entity = NSEntityDescription.entity(forEntityName: "Favorited", in: manageContext)
+        let movie = NSManagedObject(entity: entity!, insertInto: manageContext)
+        
+        movie.setValue(movieTitle.text, forKey: "title")
+        
+//        
+//        let favoriteMovie = NSEntityDescription.entity(forEntityName: "Favorited", in: context)
+//        favoriteMovie?.setValue(movieTitle.text, forKey: "title")
         do {
-            try context.save()
+            try manageContext.save()
         } catch  {
             print("Error Saving Favorite")
         }

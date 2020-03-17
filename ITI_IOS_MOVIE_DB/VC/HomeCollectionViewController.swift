@@ -187,22 +187,19 @@ class HomeCollectionViewController: UICollectionViewController {
         
         let entity = NSEntityDescription.entity(forEntityName: "SavedMovie", in: manageContext)
         
-        var count = 0
 
         for m in mainMoviesArr {
         let movie = NSManagedObject(entity: entity!, insertInto: manageContext)
         
-            print(m.title)
             movie.setValue(m.id, forKey: "mID")
             movie.setValue(m.overView, forKey: "mOverView")
             movie.setValue(m.vote_average, forKey: "mRating")
             movie.setValue(m.release_date, forKey: "mReleaseYear")
             movie.setValue(m.title, forKey: "mTitle")
             movie.setValue(m.image, forKey: "mImage")
-            count += 1
+
             do {
                 try manageContext.save()
-                print("\("COREDATA SAVED")\(count)")
                 
             }catch let error{
                 
