@@ -119,33 +119,29 @@ class HomeCollectionViewController: UICollectionViewController {
      */
     override func collectionView(_ collectionView: UICollectionView, performAction action: Selector, forItemAt indexPath: IndexPath, withSender sender: Any?) {
         
-        segueIndex = indexPath.row
-        
-        performSegue(withIdentifier: "showMovieDetails", sender: self)
+//        segueIndex = indexPath.row
+//        performSegue(withIdentifier: "showMovieDetails", sender: self)
         
     }
     
     
-    override func collectionView(_ collectionView: UICollectionView,
-                                 didSelectItemAt indexPath: IndexPath){
+    override func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath){
         print("pressed")
-        segueIndex = indexPath.row
+//        segueIndex = indexPath.row
+//        performSegue(withIdentifier: "showMovieDetails", sender: self)
+        let movieDetails = self.storyboard?.instantiateViewController(withIdentifier: "MovieDetails") as! MovieDetails
+        movieDetails.movie = mainMoviesArr[indexPath.row]
+        self.navigationController?.pushViewController(movieDetails, animated: true)
         
-        performSegue(withIdentifier: "showMovieDetails", sender: self)
     }
     
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showMovieDetails" {
-            let MovieDetails = segue.destination as! MovieDetails
-            MovieDetails.movie = mainMoviesArr[segueIndex]
-//        }else if segue.identifier == "showReviews" {
-//            let reviewsTV = segue.destination as! ReviewsTableViewController
-//            reviewsTV.movieID = mainMoviesArr[segueIndex].id
-//        }else if  segue.identifier == "showTrailers" {
-//            let trailersTV = segue.destination as! TrailersTableViewController
-//            trailersTV.movieID = mainMoviesArr[segueIndex].id
-        }
-    }
+    
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showMovieDetails" {
+//            let MovieDetails = segue.destination as! MovieDetails
+//            MovieDetails.movie = mainMoviesArr[segueIndex]
+//        }
+//    }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return 0

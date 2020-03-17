@@ -18,31 +18,21 @@ class MovieDetails: UIViewController {
     @IBOutlet weak var movieTitle: UILabel!
     @IBOutlet weak var overview: UITextView!
     @IBOutlet weak var year: UILabel!
-    
+    @IBOutlet var ratingView: CosmosView!
     @IBOutlet weak var imageView: UIImageView!
     
-    @IBOutlet weak var ratingView: CosmosView!
-    
-    
     @IBAction func btnReviews(_ sender: UIButton) {
-        print("pressed yooo")
-        performSegue(withIdentifier: "showReviews", sender: self)
-        
+        let reviewVC = self.storyboard?.instantiateViewController(withIdentifier: "reviewsVC") as! ReviewsTableViewController
+        reviewVC.movieID = movie.id
+        self.navigationController?.pushViewController(reviewVC, animated: true)
     }
     
-    
-    @IBAction func testBtn(_ sender: UIButton) {
-        print("pressed yooo")
-
-    }
-    
-    
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        if segue.identifier == "showReviews" {
-        let reviewsTV = segue.destination as! ReviewsTableViewController
-            reviewsTV.movieID = movie.id
-        }
-    }
+//    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+//        if segue.identifier == "showReviews" {
+//            let reviewsTV = segue.destination as! ReviewsTableViewController
+//            reviewsTV.movieID = movie.id
+//        }
+//    }
     
     @IBAction func btnFavorite(_ sender: UIButton) {
         
@@ -53,32 +43,30 @@ class MovieDetails: UIViewController {
         } catch  {
             print("Error Saving Favorite")
         }
- 
+        
     }
     
-    
     var movie = Movie()
-   
+    
     override func viewDidLoad() {
         super.viewDidLoad()
-//        if #available(iOS 13.0, *) {
-//            overrideUserInterfaceStyle = .dark
-//        } else {
-//            // Fallback on earlier versions
-//        }
-print(movie.id)
+        //        if #available(iOS 13.0, *) {
+        //            overrideUserInterfaceStyle = .dark
+        //        } else {
+        //            // Fallback on earlier versions
+        //        }
+        print(movie.id)
         
         movieTitle.text = movie.title
         year.text = movie.release_date
         overview.text = movie.overView
         imageView.sd_setImage(with: URL(string: "\("https://image.tmdb.org/t/p/w185")\(movie.image)" ), completed: nil)
-//        ratingView.rating = movie.vote_average/2
-//        ratingView.settings.updateOnTouch = false
-        // Do any additional setup after loading the view.
+        ratingView.rating = movie.vote_average/2
+        ratingView.settings.updateOnTouch = false
     }
     
     override func viewWillDisappear(_ animated: Bool) {
-       
+        
     }
     /*
      // MARK: - Navigation
