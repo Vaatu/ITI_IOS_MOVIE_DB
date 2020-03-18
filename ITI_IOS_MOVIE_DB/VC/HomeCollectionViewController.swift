@@ -11,10 +11,11 @@ import Alamofire
 import SwiftyJSON
 import SDWebImage
 import CoreData
+import DropDown
 
 
 class HomeCollectionViewController: UICollectionViewController {
-    
+    let dropDown = DropDown()
     var reachability = Reachability()
     
     var mainMoviesArr : [Movie] = []
@@ -26,6 +27,7 @@ class HomeCollectionViewController: UICollectionViewController {
         self.navigationController?.isNavigationBarHidden = true
 
     }
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
