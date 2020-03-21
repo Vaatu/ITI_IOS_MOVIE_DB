@@ -1,0 +1,10 @@
+Team # 7
+
+Muhammad El-Arabi
+    
+Aly Serry
+
+
+The tasks are expressed on Githib commits
+
+https://github.com/Vaatu/ITI_IOS_MOVIE_DB
